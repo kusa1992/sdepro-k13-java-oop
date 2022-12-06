@@ -10,7 +10,7 @@ public class Lab_02_2 {
         if (myNumber % 2 == 0) {
             System.out.println("Your number is an even number.");
         } else {
-            System.out.println("Your number is an odd number");
+            System.out.println("Your number is an odd number.");
         }
     }
 }

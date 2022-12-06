@@ -12,7 +12,6 @@ public class Lab_02_3 {
         float bmi = weight / (height * 2);
         double weightNeedToLose = Math.round((weight - 24.9 * height * 2) * 100.0)/100.0;
         double weightNeedToGain = Math.round((18.5 * height * 2 - weight) * 100.0)/100.0;
-        System.out.println("Your BMI is: " + bmi);
         if (bmi <= 18.5) {
             System.out.println("Underweight");
             System.out.println("You should gain: " + weightNeedToGain + "kg");
