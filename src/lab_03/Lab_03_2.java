@@ -1,6 +1,7 @@
 package lab_03;
 
 public class Lab_03_2 {
+
     public static void main(String[] args) {
         int[] intArr = {1, 2, 3, 4, 5};
         int max = intArr[0];

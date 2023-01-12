@@ -1,6 +1,7 @@
 package lab_03;
 
 public class Lab_03_1 {
+
     public static void main(String[] args) {
         int[] intArr = new int[]{1, 2, 3, 4, 5};
         int len = intArr.length;

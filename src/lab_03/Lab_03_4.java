@@ -3,6 +3,7 @@ package lab_03;
 import java.util.Arrays;
 
 public class Lab_03_4 {
+
     public static void main(String[] args) {
         int[] firstArr = {1, 12, 16, 28, 34};
         int[] secondArr = {1, 13, 16, 27, 99};

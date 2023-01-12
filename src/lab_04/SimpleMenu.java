@@ -1,8 +1,6 @@
 package lab_04;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class SimpleMenu {
 
@@ -28,8 +26,10 @@ public class SimpleMenu {
         myArrayList.add(fourthNum);
         myArrayList.add(fifthNum);
 
+        Set<Integer> set = new HashSet<>(myArrayList);
+
         // 2. Print numbers
-        System.out.println("My numbers are " + myArrayList);
+        System.out.println("My numbers are " + set);
 
         // 3. Get maximum number
         int maxNum = myArrayList.get(0);
@@ -48,9 +48,7 @@ public class SimpleMenu {
         System.out.println("Minimum number is: " + minNum);
 
         // 5. Search number
-        int index = myArrayList.indexOf(thirdNum);
-        System.out.println("The index of " + thirdNum + " is: " + index);
-
+        System.out.println(myArrayList.contains(16));
     }
 }
 
