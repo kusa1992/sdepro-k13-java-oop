@@ -3,52 +3,68 @@ package lab_04;
 import java.util.*;
 
 public class SimpleMenu {
+    private static int userInputNumber;
+    private static List<Integer> myArrList = new ArrayList<>();
 
     public static void main(String[] args) {
-
-        // 1. Add numbers into Array
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Please enter the 1st number: ");
-        int firstNum = scanner.nextInt();
-        System.out.print("Please enter the 2nd number: ");
-        int secondNum = scanner.nextInt();
-        System.out.print("Please enter the 3rd number: ");
-        int thirdNum = scanner.nextInt();
-        System.out.print("Please enter the 4th number: ");
-        int fourthNum = scanner.nextInt();
-        System.out.print("Please enter the 5th number: ");
-        int fifthNum = scanner.nextInt();
+        System.out.print("Please input a number from 1 to 5: ");
+        int userInput = scanner.nextInt();
+        do {
+            switch (userInput) {
+                case 1:
+                    getUserNumbers();
+                    break;
+                case 2:
+                    printNumber();
+                    break;
+                case 3:
+                    getMaximumNumber();
+                    break;
+                case 4:
+                    getMinimumNumber();
+                    break;
+                case 5:
+                    System.out.println("Not implemented yet");
+                    break;
+                default:
+                    System.out.println("Invalid option!");
+            }
+        } while (userInput <= 5);
+        System.out.print("Please input a number from 1 to 5");
+    }
 
-        List<Integer> myArrayList = new ArrayList<>();
-        myArrayList.add(firstNum);
-        myArrayList.add(secondNum);
-        myArrayList.add(thirdNum);
-        myArrayList.add(fourthNum);
-        myArrayList.add(fifthNum);
-
-        Set<Integer> set = new HashSet<>(myArrayList);
-
-        // 2. Print numbers
-        System.out.println("My numbers are " + set);
-
-        // 3. Get maximum number
-        int maxNum = myArrayList.get(0);
-        for (int i = 0; i < myArrayList.size(); i++) {
-            if (maxNum < myArrayList.get(i))
-                maxNum = myArrayList.get(i);
+    public static List<Integer> getUserNumbers() {
+        int inputTime = 0;
+        do {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Please input 5 numbers: ");
+            userInputNumber = scanner.nextInt();
+            myArrList.add(userInputNumber);
+            inputTime++;
         }
-        System.out.println("Maximum Number is: " + maxNum);
+        while(inputTime <= 5);
+        return myArrList;
+}
 
-        // 4. Get minimum number
-        int minNum = myArrayList.get(0);
-        for (int i = 0; i < myArrayList.size(); i++) {
-            if (minNum > myArrayList.get(i))
-                minNum = myArrayList.get(i);
+    public static void printNumber() {
+        System.out.println("My numbers are " + myArrList);
+    }
+
+    public static int getMaximumNumber() {
+        int maxNum = myArrList.get(0);
+        for (int i = 0; i < myArrList.size(); i++) {
+            if (maxNum < myArrList.get(i)) maxNum = myArrList.get(i);
         }
-        System.out.println("Minimum number is: " + minNum);
+        return maxNum;
+    }
 
-        // 5. Search number
-        System.out.println(myArrayList.contains(16));
+    public static int getMinimumNumber() {
+        int minNum = myArrList.get(0);
+        for (int i = 0; i < myArrList.size(); i++) {
+            if (minNum > myArrList.get(i)) minNum = myArrList.get(i);
+        }
+        return minNum;
     }
 }
 
